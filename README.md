@@ -23,3 +23,11 @@ Multi-tenancy (ou multitenância) permite que uma única aplicação atenda a m�
 ### Configuração do Banco de Dados
 
 Este projeto utiliza uma abordagem de schema por tenant. Para cada novo `tenant`, um schema será criado e migrado com as tabelas e dados iniciais.
+
+
+
+Para especificar o tenant desejado, inclua o cabeçalho X-PrivateTenant em cada requisição, passando o ID (nome) do tenant.
+
+### Exemplo de Request:
+- `GET http://localhost:8080/person/{id}`
+- `Headers: X-PrivateTenant: tenantA`
